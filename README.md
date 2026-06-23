@@ -1,85 +1,68 @@
-# Kirill Nemkin — portfolio
+# Kirill Nemkin — portfolio (Jekyll)
 
-Minimalist, text-first personal site, optimized to be **indexed and cited by
-LLMs** (ChatGPT, Claude, Perplexity, Google AI). Bilingual: English (`index.html`,
-canonical) + Russian (`ru.html`).
+Editorial personal site, optimized to be **indexed and cited by LLMs**, with a
+Markdown blog. Bilingual: English (`/`) + Russian (`/ru.html`). Built with
+**Jekyll** (GitHub Pages builds it automatically — no local tooling needed).
 
-## What's inside
+Live: **https://kirillnemkin-design.github.io/**
 
-| File | Purpose |
-|---|---|
-| `index.html` | English page (canonical). Hero, About, Work, Principles, Contact. |
-| `ru.html` | Russian page. Same structure. |
-| `styles.css` | Shared styles. Light/dark via `prefers-color-scheme`. |
-| `llms.txt` | Plain-markdown summary for LLM crawlers (the GEO equivalent of a press kit). |
-| `robots.txt` | Explicitly **allows** AI crawlers (GPTBot, ClaudeBot, PerplexityBot, …). |
-| `sitemap.xml` | Both URLs with hreflang. |
-| `.nojekyll` | Tells GitHub Pages to serve files as-is (so `llms.txt` etc. are reachable). |
+## ✍️ How to add a blog post (the main thing)
 
-## Why this gets you indexed as an "AI product"
+Create a Markdown file in `_posts/` named `YYYY-MM-DD-slug.md`. Easiest way:
+on GitHub → open the `_posts` folder → **Add file → Create new file**. Paste:
 
-LLMs build their picture of a person from clean, **factual, quotable** text and
-structured data — not visuals. This site gives them:
+```markdown
+---
+lang: en          # en or ru — controls which blog index it appears in
+title: "My post title"
+date: 2026-07-01
+description: "One sentence for search engines and LLMs."
+---
 
-1. **JSON-LD `Person` schema** in both pages — `name`, `jobTitle: AI Product
-   Builder`, `description`, `knowsAbout[]`, `sameAs[]`. This is the single most
-   important signal for "who is X and what do they do".
-2. **`llms.txt`** — a dedicated, crawler-friendly summary.
-3. **`robots.txt`** that explicitly welcomes AI crawlers.
-4. **Plain factual sentences** ("Kirill Nemkin is an AI product builder who…") —
-   the form LLMs quote most reliably.
-5. **Semantic HTML + hreflang + sitemap** for clean indexing in both languages.
-
-## Content — already filled from your LinkedIn
-
-Real name, title (AI Product Manager), summary, work history with metrics,
-side projects, education, and contacts (email / LinkedIn / Telegram) are all in
-place. Only one thing depends on where it's hosted:
-
-### ⚠️ Before you deploy — confirm the URL
-
-The site currently assumes it'll live at **`https://kirill-nemkin.github.io`**
-(a GitHub Pages *user site* — needs the repo named exactly `kirill-nemkin.github.io`).
-
-- If your **GitHub username differs**, or you'll use a **custom domain**, replace
-  every `https://kirill-nemkin.github.io` across the files. Quick find:
-  `grep -rl kirill-nemkin.github.io .` (it's in `index.html`, `ru.html`,
-  `robots.txt`, `sitemap.xml`, `llms.txt`).
-
-Optional polish:
-- **GitHub link** isn't shown anywhere (it wasn't on your CV). Add one in the
-  Contact section + `sameAs` of both pages if you want it.
-- **Hero wording** — an alternative phrasing sits in an HTML comment above each
-  `<h1>`; swap if you prefer it.
-
-## Deploy to GitHub Pages
-
-```bash
-cd portfolio-site
-git init
-git add .
-git commit -m "Portfolio site"
-git branch -M main
-# create an empty repo on GitHub named exactly  kirill-nemkin.github.io
-# (replace kirill-nemkin if your GitHub username differs), then:
-git remote add origin git@github.com:kirill-nemkin/kirill-nemkin.github.io.git
-git push -u origin main
+Write the post in **Markdown**. Headings with `##`, lists, `> quotes`, links.
 ```
 
-Then in the repo: **Settings → Pages → Build and deployment → Source: Deploy
-from a branch → `main` / root**. Live in ~1 minute at
-`https://kirill-nemkin.github.io/`.
+Commit. GitHub rebuilds in ~1 minute and the post appears automatically on
+`/blog/` (or `/ru/blog/` for `lang: ru`), in the homepage "Posts" teaser, and
+in the RSS feed `/feed.xml`. No HTML, nothing else to touch.
 
-### Custom domain (recommended for LLM credibility)
+## Structure
 
-Add a file named `CNAME` containing just your domain (e.g. `kirillnemkin.com`),
-push it, then point your domain's DNS at GitHub Pages. A clean root domain reads
-as more authoritative to both search and AI crawlers than `*.github.io`.
+| Path | What |
+|---|---|
+| `_config.yml` | Site settings (title, URL, plugins). |
+| `_layouts/` | `default` (head + JSON-LD + nav + footer), `page`, `post`. |
+| `_includes/nav.html` | Header / nav (EN + RU). |
+| `index.html` / `ru.html` | Home pages (hero, about, work, path, posts, contact). |
+| `blog.html` / `blog-ru.html` | Post indexes (`/blog/`, `/ru/blog/`). |
+| `_posts/` | Blog posts in Markdown. |
+| `assets/styles.css` | All styling. |
+| `llms.txt`, `robots.txt` | LLM/GEO layer (sitemap + feed are auto-generated). |
 
-## After deploy — help the crawlers find you
+## Tweaking the look
 
-- Submit `sitemap.xml` in **Google Search Console** (Google AI Overviews pull
-  from the index).
-- Make sure your **GitHub / LinkedIn** profiles link back to the site (the
-  `sameAs` links should be reciprocal — LLMs trust mutually-linked identities).
-- Ask an LLM "Who is Kirill Nemkin?" a few weeks after launch to check pickup.
+`assets/styles.css`, top `:root` block:
+- `--accent` — the one accent color (currently vermilion `#c0392b`).
+- `--serif` — heading font; `--sans` — body font.
+- `--bg`, `--text`, `--muted` — base colors.
+
+Hero wording lives in `index.html` / `ru.html`.
+
+## LLM / GEO layer
+
+- JSON-LD `Person` + `WebSite` in `_layouts/default.html` (jobTitle, knowsAbout,
+  sameAs, address, alumniOf).
+- `llms.txt` — crawler-friendly summary.
+- `robots.txt` — explicitly allows GPTBot, ClaudeBot, PerplexityBot, etc.
+- `sitemap.xml` (jekyll-sitemap) and `feed.xml` (jekyll-feed) are generated on build.
+
+## Deploy
+
+Repo is the GitHub Pages user-site `kirillnemkin-design.github.io` → served at
+the root URL. Pages auto-builds on every push/commit to `main`. After deploy,
+in Google Search Console submit `https://kirillnemkin-design.github.io/sitemap.xml`,
+and add the site link to your LinkedIn so the identity is mutually linked.
+
+## Local preview (optional)
+
+Needs Ruby ≥ 2.7: `bundle install && bundle exec jekyll serve` → http://localhost:4000

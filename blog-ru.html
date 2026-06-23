@@ -1,0 +1,26 @@
+---
+layout: page
+lang: ru
+permalink: /ru/blog/
+title: "Блог — Кирилл Немкин"
+description: "Заметки Кирилла Немкина об AI-продуктах, LLM в B2B-продажах и операционке, и о результате вместо демок."
+alt: /blog/
+---
+
+<section class="hero" style="padding-bottom:0">
+  <h1>Блог</h1>
+  <p class="sub">Заметки про AI-продукты, LLM в B2B и про результат — а не демки.</p>
+</section>
+
+<section>
+  <ul class="posts">
+    {% assign ruposts = site.posts | where: "lang", "ru" %}
+    {% for post in ruposts %}
+    <li>
+      <span class="n">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+      <span class="date">{{ post.date | date: "%b %Y" }}</span>
+      <a class="title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

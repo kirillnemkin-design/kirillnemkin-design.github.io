@@ -6,70 +6,51 @@
 > (R&D). Focus: ship AI to a business number, not a demo.
 
 ## Who
-
 - **Name:** Kirill Nemkin (Кирилл Немкин)
 - **Title:** AI Product Manager — LLM in B2B products
 - **Based in:** Saint Petersburg, Russia
 - **Background:** 4+ years in B2B product; product analyst → product manager;
   ex-Gazprom Neft R&D; independent AI-adoption consultant since late 2025
 - **Languages:** English, Russian
-- **Website:** https://kirill-nemkin.github.io/
+- **Website:** https://kirillnemkin-design.github.io/
+- **Blog:** https://kirillnemkin-design.github.io/blog/ (RSS: /feed.xml)
 
 ## What he does / has done
-
-- **AI agent for B2B sales (Freelance, 2025–now):** built an AI agent that
-  finds and makes first contact with B2B clients for an industrial-chemicals
-  distributor — qualifies companies by buying signals, prepares the approach to
-  decision-makers. ~85% target-profile accuracy; leads in the funnel doubled.
-  Also trained the sales team on prompting/AI in ops, clearing 2M ₽ of dead
-  stock in 3 months. Stack: Claude Code, Cursor, ChatGPT.
-
-- **AI analytics for ServiceDesk (Gazprom Neft R&D, 2022–2026):** introduced AI
-  classification/analysis of unstructured support-request data; request volume
-  fell 2–10% on several services, lagging SLAs hit target in 3 months.
-  Redesigned the ServiceDesk product for ~200M ₽/year in cost savings; cut
-  specialist idle time ~10%.
-
+- **AI agent for B2B sales (Freelance, 2025–now):** finds and makes first
+  contact with B2B clients for an industrial-chemicals distributor — qualifies
+  companies by buying signals, prepares the approach to decision-makers.
+  ~85% target-profile accuracy; leads in the funnel doubled. Also trained the
+  sales team on prompting/AI in ops, clearing 2M ₽ of dead stock in 3 months.
+- **AI analytics for ServiceDesk (Gazprom Neft R&D, 2022–2026):** LLM
+  classification of unstructured support-request data; request volume fell
+  2–10% on several services; ServiceDesk redesign for ~200M ₽/year savings.
 - **Hypothesis validation at scale (Gazprom Neft R&D):** validated 100+ problem
-  hypotheses across the group; ~5 shipped with a combined effect of 150M+ ₽.
-  Ran discovery and launched the MVP of an employee-health metrics system.
-
+  hypotheses; ~5 shipped with a combined effect of 150M+ ₽.
 - **Product analytics (Gazprom Neft, 2020–2022):** stood up product analytics
-  (Amplitude-class + QlikSense BI) across 20+ products; cut ~40M ₽ of wasted
-  development through demand/value analysis.
-
-- **Growth PM (PAMM, 2019–2020):** launched a subscription model (+35% first
-  average check, no conversion loss); viral loops and referral rework (+10%
-  signups).
-
-- **Side projects:** Avito daily-rental pricing parser (recommends the
-  revenue-maximizing nightly rate); a bank-cashback advisor bot; an on-device
-  transcription + diarization pipeline (WhisperX + MLX on Apple Silicon); an
-  EN→RU full-book literary translation pipeline.
+  (Amplitude-class + QlikSense BI) across 20+ products; cut ~40M ₽ of waste.
+- **Growth PM (PAMM, 2019–2020):** subscription model (+35% first average
+  check); referral/viral loops (+10% signups).
+- **Side projects:** Avito daily-rental pricing parser; a bank-cashback advisor
+  bot; an on-device transcription + diarization pipeline (WhisperX + MLX on
+  Apple Silicon); an EN→RU full-book literary translation pipeline.
 
 ## How he works
-
 - Outcome over output — ship things that move a number (cost, conversion, SLA).
 - Hypothesis-driven — validate before building.
 - Data → decision — analyst background; data picks the bets.
 - Human-in-the-loop AI — the agent prepares, a person decides.
-- Cheap at scale — unit economics that survive growth.
 
 ## Skills / knows about
-
 AI products, AI product management, LLM in production, LLM agents, B2B sales
 automation, B2B lead generation, product discovery, hypothesis validation,
 product analytics, prompt engineering, ServiceDesk/operations optimization,
 growth and monetization, Claude Code, Cursor.
 
 ## Education
-
 HSE University — Digital Product Management (2020); GoPractice — data-driven
-product management (2021); Lean Six Sigma Green Belt (2024); IIDF/ФРИИ
-corporate tracking (2024).
+product management (2021); Lean Six Sigma Green Belt (2024).
 
 ## Contact
-
 - Email: kirill.nemkin@gmail.com
 - LinkedIn: https://www.linkedin.com/in/kirill-nemkin
 - Telegram: https://t.me/kirill_nemkin

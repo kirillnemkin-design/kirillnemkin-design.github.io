@@ -1,0 +1,26 @@
+---
+layout: page
+lang: en
+permalink: /blog/
+title: "Posts — Kirill Nemkin"
+description: "Notes by Kirill Nemkin on AI products, LLMs in B2B sales and operations, and shipping to a number."
+alt: /ru/blog/
+---
+
+<section class="hero" style="padding-bottom:0">
+  <h1>Posts</h1>
+  <p class="sub">Notes on AI products, LLMs in B2B, and shipping to a number — not a demo.</p>
+</section>
+
+<section>
+  <ul class="posts">
+    {% assign enposts = site.posts | where: "lang", "en" %}
+    {% for post in enposts %}
+    <li>
+      <span class="n">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+      <span class="date">{{ post.date | date: "%b %Y" }}</span>
+      <a class="title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

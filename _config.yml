@@ -1,0 +1,25 @@
+title: "Kirill Nemkin"
+description: "Kirill Nemkin — AI Product Manager. Puts LLMs into B2B sales and operations. Builds AI agents that find customers and cut costs. Ex-Gazprom Neft R&D."
+url: "https://kirillnemkin-design.github.io"
+baseurl: ""
+author: "Kirill Nemkin"
+lang: "en"
+
+permalink: /posts/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

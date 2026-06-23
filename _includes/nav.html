@@ -1,0 +1,23 @@
+{% if page.lang == 'ru' %}
+<header class="site-header">
+  <a class="brand" href="{{ '/ru.html' | relative_url }}">Кирилл Немкин</a>
+  <nav class="nav">
+    <a href="{{ '/ru.html#work' | relative_url }}">Проекты</a>
+    <a href="{{ '/ru.html#path' | relative_url }}">Путь</a>
+    <a class="is-accent" href="{{ '/ru/blog/' | relative_url }}">Блог</a>
+    <a href="{{ '/ru.html#contact' | relative_url }}">Контакты</a>
+    <a class="lang" href="{{ '/' | relative_url }}" hreflang="en">EN</a>
+  </nav>
+</header>
+{% else %}
+<header class="site-header">
+  <a class="brand" href="{{ '/' | relative_url }}">Kirill Nemkin</a>
+  <nav class="nav">
+    <a href="{{ '/#work' | relative_url }}">Work</a>
+    <a href="{{ '/#path' | relative_url }}">Path</a>
+    <a class="is-accent" href="{{ '/blog/' | relative_url }}">Posts</a>
+    <a href="{{ '/#contact' | relative_url }}">Contact</a>
+    <a class="lang" href="{{ '/ru.html' | relative_url }}" hreflang="ru">RU</a>
+  </nav>
+</header>
+{% endif %}
